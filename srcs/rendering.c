@@ -6,7 +6,7 @@
 /*   By: egualand <egualand@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:58:52 by egualand          #+#    #+#             */
-/*   Updated: 2023/12/27 14:01:45 by egualand         ###   ########.fr       */
+/*   Updated: 2023/12/27 14:14:17 by egualand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,3 +108,6 @@ static unsigned short	iterate(t_dcoord pix, t_gdata *data)
 	f = data->f;
 	i = -1;
 	while (++i < max_iter && (new.x * new.x + new.y * new.y) <= 4)
+		new = f(new, pix, data);
+	return (i);
+}
